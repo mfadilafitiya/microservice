@@ -1,0 +1,769 @@
+/* ========================================================
+   CSS MURNI (VANILLA CSS) - TEMA NEO-BRUTALISM
+   Tanpa library UI eksternal, sesuai ketentuan panduan PDF.
+   ======================================================== */
+
+:root {
+  --ink: #18181b;
+  --bg-page: #fbf7ee;
+  --card-bg: #ffffff;
+  --card-alt: #f4efe4;
+  
+  /* Palet Aksen Neo-Brutalism */
+  --neo-yellow: #fde047;
+  --neo-yellow-hover: #facc15;
+  --neo-purple: #818cf8;
+  --neo-purple-hover: #6366f1;
+  --neo-pink: #f472b6;
+  --neo-green: #4ade80;
+  --neo-green-light: #dcfce7;
+  --neo-cyan: #38bdf8;
+  --neo-orange: #fb923c;
+  --neo-red: #f87171;
+  --neo-red-light: #fee2e2;
+  
+  --muted: #52525b;
+  --line: #18181b;
+  
+  /* Bayangan Keras Taktil */
+  --border-w: 3px;
+  --shadow-sm: 2px 2px 0px var(--ink);
+  --shadow-md: 4px 4px 0px var(--ink);
+  --shadow-lg: 6px 6px 0px var(--ink);
+  --shadow-hover: 7px 7px 0px var(--ink);
+  --shadow-active: 1px 1px 0px var(--ink);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background-color: var(--bg-page);
+  background-image: radial-gradient(var(--ink) 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Wadah Utama */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5rem;
+}
+
+/* ========================================================
+   NAVBAR (HEADER)
+   ======================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.75rem;
+  background: var(--card-bg);
+  border-bottom: var(--border-w) solid var(--ink);
+  box-shadow: 0 4px 0px var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  background: var(--neo-yellow);
+  padding: 0.35rem 0.85rem;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+  transition: all 0.15s ease;
+}
+.brand-badge:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar nav {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar nav a {
+  padding: 0.45rem 1rem;
+  background: var(--card-bg);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.95rem;
+  font-weight: 800;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.navbar nav a:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+  background: var(--card-alt);
+}
+
+.navbar nav a.active {
+  background: var(--neo-purple);
+  color: #ffffff;
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-md);
+}
+
+.user-selector-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--neo-cyan);
+  padding: 0.35rem 0.75rem;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.user-selector-badge select {
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 1px 0px var(--ink);
+}
+
+/* ========================================================
+   HEADINGS & HERO
+   ======================================================== */
+h1 {
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem;
+  display: inline-block;
+  padding: 0.25rem 0.9rem;
+  background: var(--neo-yellow);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 1.5rem 0 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin: 0 0 0.5rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ========================================================
+   TOMBOL & INTERAKSI
+   ======================================================== */
+button, .btn {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.6rem 1.25rem;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  background: var(--neo-yellow);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all 0.12s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+button:hover:not(:disabled), .btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hover);
+  background: var(--neo-yellow-hover);
+}
+
+button:active:not(:disabled), .btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-active);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: var(--shadow-sm);
+  background: #d4d4d8 !important;
+}
+
+.btn-primary {
+  background: var(--neo-purple);
+  color: #ffffff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--neo-purple-hover);
+}
+
+.btn-danger {
+  background: var(--neo-red);
+  color: #ffffff;
+}
+.btn-danger:hover:not(:disabled) {
+  background: #ef4444;
+}
+
+.btn-green {
+  background: var(--neo-green);
+  color: var(--ink);
+}
+
+.btn-white {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+/* ========================================================
+   FORMULIR & INPUT
+   ======================================================== */
+.form {
+  background: var(--card-bg);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  gap: 1rem;
+}
+
+.form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+input[type="number"],
+input[type="text"],
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: #ffffff;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  box-shadow: var(--shadow-sm);
+  outline: none;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: var(--shadow-md);
+  border-color: var(--ink);
+  background: #fffef8;
+}
+
+/* ========================================================
+   NOTIFIKASI / ALERTS
+   ======================================================== */
+.alert {
+  padding: 0.85rem 1.15rem;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font-weight: 700;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.alert-error {
+  background: var(--neo-red-light);
+  color: #991b1b;
+  border-color: var(--ink);
+}
+
+.alert-success {
+  background: var(--neo-green-light);
+  color: #14532d;
+  border-color: var(--ink);
+}
+
+/* ========================================================
+   GRID PRODUK & CARD KATALOG
+   ======================================================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.15s ease-in-out;
+  position: relative;
+}
+
+.card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-image-box {
+  width: 100%;
+  height: 200px;
+  background: #ffffff;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.card-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.card:hover .card-image-box img {
+  transform: scale(1.06);
+}
+
+.card-image-fallback {
+  font-size: 3.75rem;
+  user-select: none;
+}
+
+.badge-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  background: var(--neo-cyan);
+}
+
+.price {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--ink);
+  margin: 0.5rem 0;
+  display: inline-block;
+  background: var(--neo-yellow);
+  padding: 0.3rem 0.75rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.stars {
+  color: #eab308;
+  font-size: 1.05rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #ffffff;
+  padding: 0.25rem 0.6rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================================
+   DETAIL PRODUK
+   ======================================================== */
+.detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: var(--card-bg);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-image-box {
+  width: 100%;
+  height: 360px;
+  background: #ffffff;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  padding: 1rem;
+}
+
+.detail-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.stepper-box {
+  display: inline-flex;
+  align-items: center;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.stepper-box input {
+  width: 4rem;
+  text-align: center;
+  border: none;
+  box-shadow: none;
+  font-size: 1.1rem;
+  font-weight: 900;
+  padding: 0.5rem 0;
+}
+
+.stepper-btn {
+  background: var(--neo-yellow);
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: 42px;
+  height: 44px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid var(--ink);
+  border-right: 2px solid var(--ink);
+  transition: background 0.15s ease;
+}
+.stepper-btn:first-child {
+  border-left: none;
+}
+.stepper-btn:last-child {
+  border-right: none;
+}
+.stepper-btn:hover:not(:disabled) {
+  background: var(--neo-yellow-hover);
+  transform: none;
+  box-shadow: none;
+}
+
+/* ========================================================
+   BAGIAN ULASAN (REVIEW SECTION - 2 KOLOM)
+   ======================================================== */
+.reviews-section-wrapper {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 850px) {
+  .reviews-section-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.review-form-card {
+  background: #ffffff;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 90px;
+}
+
+.review-form-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.star-interactive-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+}
+
+.star-picker-btn {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0.1rem;
+  cursor: pointer;
+  color: #d4d4d8;
+  transition: all 0.15s ease;
+}
+.star-picker-btn.filled {
+  color: #f59e0b;
+  transform: scale(1.15);
+}
+.star-picker-btn:hover {
+  transform: scale(1.3);
+  box-shadow: none;
+}
+
+.review-feed-card {
+  background: #ffffff;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.rating-summary-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--neo-yellow);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.rating-big-score {
+  font-size: 2.25rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.reviews-list {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.review-item {
+  background: var(--card-alt);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease;
+}
+.review-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
+.review-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.user-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--neo-purple);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+}
+
+.review-date-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+  background: #ffffff;
+  padding: 0.2rem 0.5rem;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-sm);
+}
+
+.review-comment-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0.5rem 0 0;
+}
+
+/* ========================================================
+   HALAMAN KERANJANG (SPLIT VIEW & RESUMEN)
+   ======================================================== */
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 850px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cart-items-wrapper {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.cart-item-card {
+  background: #ffffff;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  transition: transform 0.15s ease;
+}
+.cart-item-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cart-summary-card {
+  background: #ffffff;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 90px;
+}
+
+.cart-total-box {
+  background: var(--neo-yellow);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin: 1.25rem 0;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.cart-total-box .total-number {
+  font-size: 1.75rem;
+  font-weight: 900;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* Empty State */
+.empty-box {
+  background: #ffffff;
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  margin: 1.5rem 0;
+}
+
+.empty-icon {
+  font-size: 4.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
